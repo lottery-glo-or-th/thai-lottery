@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thai Lottery Agent - Professional Contact</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+  --primary: #1da1f2;
+  --primary-dark: #0d8bd9;
+  --secondary: #0ea5e9;
+  --accent: #f59e0b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --card-bg: #ffffff;
+  --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  --bg-gradient: linear-gradient(135deg, #f7fbff 0%, #e8f3ff 100%);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --radius: 10px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  padding-bottom: 30px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header Styles - IMO Icon */
+header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 0 12px;
+  position: relative;
+}
+
+header img {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.2);
+}
+
+.header-text h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.header-text p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Compact Cards Section */
+.cards-section {
+  margin: 20px 0;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title i {
+  color: var(--primary);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+/* Compact Card Design */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+.agent-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.agent-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.agent-avatar img {
+  width: 32px;
+  height: 32px;
+}
+
+.agent-info {
+  flex: 1;
+}
+
+.agent-name {
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.agent-badge {
+  display: inline-block;
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-top: 2px;
+}
+
+.contact-details {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-icon {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* IMO আইডি আইকন - একাউন্ট লোগো */
+.imo-id-icon {
+  color: #1da1f2;
+  background: linear-gradient(135deg, #e6f2ff, #f0f9ff);
+}
+
+.detail-text {
+  flex: 1;
+}
+
+.detail-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.detail-value {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.phone-number {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: var(--transition);
+  border: none;
+}
+
+.btn-copy {
+  background: #f1f5f9;
+  color: var(--primary);
+}
+
+.btn-copy:hover {
+  background: #e2e8f0;
+}
+
+.btn-open {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.btn-open:hover {
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  box-shadow: 0 3px 10px rgba(29, 161, 242, 0.3);
+}
+
+/* Lottery Results Section */
+.lottery-section {
+  margin-top: 30px;
+}
+
+.lottery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.lottery-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lottery-title i {
+  color: var(--accent);
+}
+
+.lottery-update {
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: #f8fafc;
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.lottery-image-container {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  background: white;
+  padding: 3px;
+}
+
+.lottery-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--radius) - 2px);
+}
+
+/* ইমেজের উপর তারিখ - নতুন যোগ */
+.image-date-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  z-index: 3;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.image-date-overlay i {
+  color: var(--accent);
+}
+
+/* Animation for lottery image */
+.lottery-image-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    transparent 20%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 80%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+.image-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.image-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--radius);
+  padding: 2px;
+  background: linear-gradient(45deg, var(--primary), var(--accent), var(--secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% {
+    background: linear-gradient(45deg, var(--primary), var(--accent), var(--secondary));
+  }
+  25% {
+    background: linear-gradient(135deg, var(--primary), var(--accent), var(--secondary));
+  }
+  50% {
+    background: linear-gradient(225deg, var(--primary), var(--accent), var(--secondary));
+  }
+  75% {
+    background: linear-gradient(315deg, var(--primary), var(--accent), var(--secondary));
+  }
+  100% {
+    background: linear-gradient(45deg, var(--primary), var(--accent), var(--secondary));
+  }
+}
+
+.lottery-note {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin-top: 8px;
+  padding: 10px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 3px solid var(--accent);
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--text-primary);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 320px;
+  font-size: 14px;
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-icon {
+  font-size: 18px;
+  color: var(--success);
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .lottery-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .header-text h1 {
+    font-size: 22px;
+  }
+  
+  .card {
+    padding: 16px;
+  }
+  
+  .agent-header {
+    margin-bottom: 14px;
+  }
+  
+  .actions {
+    flex-direction: column;
+  }
+  
+  .toast {
+    left: 16px;
+    right: 16px;
+    max-width: calc(100% - 32px);
+  }
+  
+  .image-date-overlay {
+    top: 8px;
+    left: 8px;
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  header {
+    gap: 12px;
+  }
+  
+  header img {
+    width: 52px;
+    height: 52px;
+  }
+  
+  .header-text h1 {
+    font-size: 20px;
+  }
+  
+  .header-text p {
+    font-size: 13px;
+  }
+  
+  .image-date-overlay {
+    top: 6px;
+    left: 6px;
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <!-- Header with IMO Icon -->
+  <header>
+    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/imo-icon.png" alt="IMO Icon">
+    <div class="header-text">
+      <h1>Thai Lottery Agent</h1>
+      <p>বাংলাদেশ প্রবাসীদের জন্য থাই লটারি, বিশ্বস্ত এজেন্টের সাথে যোগাযোগ করুন</p>
+    </div>
+  </header>
+
+  <!-- Contacts Section -->
+  <section class="cards-section">
+    <div class="section-title">
+      <i class="fas fa-address-book"></i>
+      <span>এজেন্টদের তথ্য</span>
+    </div>
+    
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <!-- Lottery Results Section -->
+  <section class="lottery-section">
+    <div class="lottery-header">
+      <div class="lottery-title">
+        <i class="fas fa-chart-line"></i>
+        <span>থাই লটারি রেজাল্ট</span>
+      </div>
+      <div class="lottery-update">
+        <i class="fas fa-sync-alt"></i>
+        <span>সর্বশেষ আপডেট</span>
+      </div>
+    </div>
+    
+    <div class="lottery-image-container">
+      <!-- ইমেজের উপর তারিখ -->
+      <div class="image-date-overlay">
+        <i class="fas fa-calendar-alt"></i>
+        <span>০২/০১/২০২৬ লটারি ফলাফল</span>
+      </div>
+      
+      <img src="1000053873.jpg" alt="Thai Lottery Result" class="lottery-image" id="lotteryImage">
+      <div class="image-border"></div>
+    </div>
+    
+    <div class="lottery-note">
+      <i class="fas fa-info-circle"></i>
+      উপরের ছবিতে থাই লটারির সর্বশেষ ড্রয়ের রেজাল্ট দেখানো হয়েছে। রেজাল্ট নিশ্চিত করতে সরাসরি এজেন্টের সাথে যোগাযোগ করুন।
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2015-2026 Thai Lottery Agent | যোগাযোগের মাধ্যম হিসেবে IMO ব্যবহার করুন</p>
+  </div>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+  <div class="toast-icon">
+    <i class="fas fa-check-circle"></i>
+  </div>
+  <div class="toast-text">কপি করা হয়েছে</div>
+</div>
+
+<script>
+const contacts = [
+  {
+    name: 'BD Thai Lottery Agent',
+    imoid: 'imoid_IHJWEfqdq6',
+    phone: '+66926281627',
+    verified: true,
+    availability: 'সকাল ৯টা - রাত ১১টা'
+  },
+  {
+    name: 'BD Thai Lottery Agent',
+    imoid: 'imoid_XYZ123abc',
+    phone: '+66887599771',
+    verified: true,
+    availability: '২৪/৭ সার্ভিস'
+  }
+];
+
+const cards = document.getElementById('cards');
+
+// Function to create agent cards
+function createAgentCard(agent) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  
+  card.innerHTML = `
+    <div class="agent-header">
+      <div class="agent-avatar">
+        <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/imo-icon.png" alt="IMO Icon">
+      </div>
+      <div class="agent-info">
+        <div class="agent-name">${agent.name}</div>
+        <div class="agent-badge">
+          <i class="fas fa-shield-alt"></i> ভেরিফাইড এজেন্ট
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-details">
+      <div class="detail-item">
+        <div class="detail-icon">
+          <i class="fas fa-phone-alt"></i>
+        </div>
+        <div class="detail-text">
+          <div class="detail-label">ফোন নম্বর</div>
+          <div class="detail-value phone-number">${agent.phone}</div>
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <div class="detail-icon imo-id-icon">
+          <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="detail-text">
+          <div class="detail-label">IMO আইডি</div>
+          <div class="detail-value">${agent.imoid}</div>
+        </div>
+      </div>
+      
+      <div class="detail-item">
+        <div class="detail-icon">
+          <i class="far fa-clock"></i>
+        </div>
+        <div class="detail-text">
+          <div class="detail-label">যোগাযোগ সময়</div>
+          <div class="detail-value">${agent.availability}</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button class="btn btn-copy copy-btn">
+        <i class="far fa-copy"></i> কপি
+      </button>
+      <button class="btn btn-open open-btn">
+        <i class="fab fa-imo"></i> IMO খুলুন
+      </button>
+    </div>
+  `;
+  
+  // Add event listeners
+  const copyBtn = card.querySelector('.copy-btn');
+  const openBtn = card.querySelector('.open-btn');
+  const phoneNumber = card.querySelector('.phone-number').textContent;
+  
+  copyBtn.addEventListener('click', () => copyToClipboard(phoneNumber, agent.name));
+  openBtn.addEventListener('click', () => openIMO(agent));
+  
+  return card;
+}
+
+// Function to copy text to clipboard
+function copyToClipboard(text, agentName) {
+  navigator.clipboard.writeText(text).then(() => {
+    showToast(`${agentName} - ${text} কপি করা হয়েছে`);
+  }).catch(err => {
+    console.error('Copy failed:', err);
+    // Fallback method
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    showToast(`${agentName} - ${text} কপি করা হয়েছে`);
+  });
+}
+
+// Function to open IMO
+function openIMO(agent) {
+  // Try to open IMO app
+  const imoUrl = `imo://user/${agent.imoid}`;
+  window.location.href = imoUrl;
+  
+  // Fallback to play store if app not installed
+  setTimeout(() => {
+    window.location.href = 'https://play.google.com/store/apps/details?id=com.imo.android.imoim';
+  }, 500);
+}
+
+// Function to show toast notification
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  const toastText = toast.querySelector('.toast-text');
+  
+  toastText.textContent = message;
+  toast.classList.add('show');
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2500);
+}
+
+// Function to load lottery image with error handling
+function loadLotteryImage() {
+  const lotteryImage = document.getElementById('lotteryImage');
+  
+  // Add loading state
+  lotteryImage.style.opacity = '0.8';
+  
+  // Check if image loads successfully
+  lotteryImage.onload = function() {
+    lotteryImage.style.opacity = '1';
+  };
+  
+  // Handle image loading error
+  lotteryImage.onerror = function() {
+    console.error('Lottery image failed to load');
+    lotteryImage.style.opacity = '1';
+    lotteryImage.alt = 'লটারি রেজাল্ট ছবিটি লোড হতে ব্যর্থ হয়েছে। সরাসরি এজেন্টের সাথে যোগাযোগ করুন।';
+    
+    // Show a placeholder
+    lotteryImage.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f1f5f9"/><text x="50%" y="50%" font-family="Arial" font-size="16" fill="%2394a3b8" text-anchor="middle" dy=".3em">লটারি রেজাল্ট ইমেজ লোড হচ্ছে...</text></svg>';
+  };
+}
+
+// Initialize the page
+function init() {
+  // Create agent cards
+  contacts.forEach(agent => {
+    const card = createAgentCard(agent);
+    cards.appendChild(card);
+  });
+  
+  // Load lottery image
+  loadLotteryImage();
+  
+  // Add animation to cards on load
+  const cardElements = document.querySelectorAll('.card');
+  cardElements.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(15px)';
+    
+    setTimeout(() => {
+      card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+      card.style.opacity = '1';
+      card.style.transform = 'translateY(0)';
+    }, index * 150);
+  });
+}
+
+// Initialize when page loads
+document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
